@@ -6,16 +6,18 @@ public class Pedido {
 
 	private int idPedido;
 	private int quantidade;
-	private Date data;
 	private Cliente cliente;
 	private Produto produto;
+	private Date data;
 
+	// Construtor de pedido
 	public Pedido(int idPedido, Cliente cliente, Produto produto, int quantidade, Date data) {
 
 		this.criarPedido(idPedido, cliente, produto, quantidade, data);
 
 	}
 
+	// Metodo para criarPedido
 	public void criarPedido(int idPedido, Cliente cliente, Produto produto, int quantidade, Date data) {
 
 		this.idPedido = idPedido;
@@ -26,8 +28,26 @@ public class Pedido {
 
 	}
 
+	// get and sets
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public void setQuantidade(int quantidade) {
@@ -36,14 +56,6 @@ public class Pedido {
 
 	public void setData(Date data) {
 		this.data = data;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public void setProduto(Produto produto) {
-		this.produto = produto;
 	}
 
 	public int getIdPedido() {
@@ -56,14 +68,6 @@ public class Pedido {
 
 	public Date getData() {
 		return data;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public Produto getProduto() {
-		return produto;
 	}
 
 }
