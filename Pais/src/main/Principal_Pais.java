@@ -54,6 +54,7 @@ public class Principal_Pais {
 				System.out.println("Informe o index para apagar: ");
 				int index = entrada.nextInt();
 				paisC.remover(index);
+				break;
 
 			case 0:
 

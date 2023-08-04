@@ -27,6 +27,7 @@ public class Paises_controller {
 	public void exibir() {
 
 		paisview.exibir(listadePaises);
+		
 	}
 
 	public void limpar() {
