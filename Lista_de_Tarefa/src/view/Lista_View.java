@@ -12,7 +12,8 @@ public class Lista_View {
 
 		for (Lista listas : lista) {
 
-			System.out.println("Nome da tarefa: " + listas.getNome() + " Status da tarefa: " + listas.getStatus());
+			System.out.println("Nome da tarefa: " + listas.getNome() + 
+					"\nStatus da tarefa: " + listas.getStatus()+"\n");
 
 		}
 

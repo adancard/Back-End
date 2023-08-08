@@ -37,7 +37,7 @@ public class Lista_Controller {
 		Scanner entrada = new Scanner(System.in);
 
 		int opcao = 0;
-		String nome, status;
+		
 
 		while (opcao != 3) {
 
@@ -49,14 +49,14 @@ public class Lista_Controller {
 			case 1:
 
 				listaView.perguntaT();
-				nome = entrada.next();
-
+				String nome = entrada.next();
+				
 				entrada.nextLine();
+
 
 				listaView.perguntaS();
-				status = entrada.next();
+				String status = entrada.nextLine();
 
-				entrada.nextLine();
 
 				adicionar(nome, status);
 				break;
