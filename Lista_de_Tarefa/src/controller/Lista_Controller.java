@@ -49,10 +49,8 @@ public class Lista_Controller {
 			case 1:
 
 				listaView.perguntaT();
-				String nome = entrada.next();
-				
 				entrada.nextLine();
-
+				String nome = entrada.nextLine();
 
 				listaView.perguntaS();
 				String status = entrada.nextLine();
