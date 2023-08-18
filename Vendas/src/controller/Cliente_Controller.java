@@ -14,7 +14,7 @@ public class Cliente_Controller {
 	
 	public Cliente_Controller() {
 		
-		clienteL = new ArrayList();
+		clienteL = new ArrayList<Cliente>();
 		clienteV = new Cliente_View();
 		
 	}
@@ -34,10 +34,7 @@ public class Cliente_Controller {
 		
 	}
 	
-	public void validadrCpf(int idCliente, String nome, String email, int cpf) {
-		
-		Cliente clientes = new Cliente(idCliente,nome,email,cpf);
-		
+	public void validadrCpf(int cpf) {	
 		
 		if(clienteL.isEmpty()) {
 			

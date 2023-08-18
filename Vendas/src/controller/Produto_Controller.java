@@ -31,42 +31,5 @@ public class Produto_Controller {
 		produtoV.listaP(listaProduto);
 
 	}
-
-	public void acharProduto(int idProduto, int quantidade) {
-
-
-		if (listaProduto.isEmpty()) {
-
-			System.out.println("Lista vazia");
-
-		} else {
-
-			for (Produto produtos : listaProduto) {
-
-				if (idProduto == produtos.getIdProduto()) {
-
-					System.out.println("Produto achado");
-					
-					if(quantidade < produtos.getQuantidade()) {
-						
-						System.out.println("Nao eh possivel fazer o pedido");
-						
-					}else {
-						
-						produtos.setQuantidade(quantidade - produtos.getQuantidade());
-						
-					}
-
-				} else {
-
-					System.out.println("ID do produto Incorreto");
-
-				}
-
-			}
-
-		}
-
-	}
 	
 }
