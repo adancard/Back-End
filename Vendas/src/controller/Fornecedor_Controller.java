@@ -12,17 +12,16 @@ import view.Produto_View;
 public class Fornecedor_Controller {
 
 	private List<Fornecedor> forne;
-	private List<Produto> listaproduto;
 	private Fornecedor_View forneV;
 	private Produto_Controller produtoC;
-	private Produto_View produtoV;
+	private Main_controller mainC;
 
 	public Fornecedor_Controller() {
 
 		forne = new ArrayList<Fornecedor>();
 		forneV = new Fornecedor_View();
 		produtoC = new Produto_Controller();
-		produtoV = new Produto_View();
+		mainC = new Main_controller();
 
 	}
 
@@ -53,6 +52,7 @@ public class Fornecedor_Controller {
 				if (fornesce.getCNPJ() == CNPJ) {
 
 					System.out.println("Bem vindo" + fornesce.getNome());
+					addproduto();
 
 				} else {
 
@@ -71,10 +71,11 @@ public class Fornecedor_Controller {
 		String nome, email;
 		Scanner entrada = new Scanner(System.in);
 
-		while (opcao != 0) {
+		do {
 
 			System.out.println("1. cadastrar");
 			System.out.println("2. entrar");
+			opcao = entrada.nextInt();
 
 			switch (opcao) {
 
@@ -100,44 +101,32 @@ public class Fornecedor_Controller {
 
 				System.out.println("cnpj");
 				cnpj = entrada.nextInt();
-
 				validarCPNJ(cnpj);
-
-				System.out.println("1.adicionar produto");
-				System.out.println("2.listar produtos");
-				opcao = entrada.nextInt();
-
-				switch (opcao) {
-
-				case 1:
-
-					System.out.println("id Produto: ");
-					id = entrada.nextInt();
-
-					System.out.println("nome produto");
-					nome = entrada.next();
-
-					System.out.println("Preco produto");
-					double preco = entrada.nextDouble();
-
-					System.out.println("Quantidade produto");
-					int quantidade = entrada.nextInt();
-
-					produtoC.Adicionar(id, nome, preco, quantidade);
-					break;
-
-				case 2:
-
-					produtoV.listaP(listaproduto);
-					break;
-
-				}
+				break;
 
 			}
 
-		}
+		} while (opcao != 0);
+	}
 
-		entrada.close();
+	public void addproduto() {
+
+		Scanner entrada = new Scanner(System.in);
+
+		System.out.println("Id Produto: ");
+		int id = entrada.nextInt();
+
+		System.out.println("Nome produto");
+		String nome = entrada.next();
+
+		System.out.println("Preco: ");
+		double preco = entrada.nextDouble();
+
+		System.out.println("Quantidade:");
+		int quantidade = entrada.nextInt();
+
+		produtoC.Adicionar(id, nome, preco, quantidade);
+		produtoC.mostrarProduto();
 
 	}
 

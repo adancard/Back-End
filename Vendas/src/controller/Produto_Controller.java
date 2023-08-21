@@ -10,6 +10,7 @@ public class Produto_Controller {
 
 	private List<Produto> listaProduto;
 	private Produto_View produtoV;
+	private Pedido_Controller pedidoC;
 
 	public Produto_Controller() {
 
@@ -28,8 +29,53 @@ public class Produto_Controller {
 
 	public void mostrarProduto() {
 
-		produtoV.listaP(listaProduto);
+		if (listaProduto.isEmpty()) {
+
+			System.out.println("Lista vazia");
+
+		} else {
+
+			produtoV.listaP(listaProduto);
+
+		}
 
 	}
-	
+
+	public void acharProduto(int idProduto, int quantidade) {
+
+		if (listaProduto.isEmpty()) {
+
+			System.out.println("Lista vazia");
+
+		} else {
+
+			for (Produto produtos : listaProduto) {
+
+				if (idProduto == produtos.getIdProduto()) {
+
+					System.out.println("Produto achado");
+
+					if (quantidade < produtos.getQuantidade()) {
+
+						System.out.println("Nao eh possivel fazer o pedido");
+
+					} else {
+
+						produtos.setQuantidade(quantidade - produtos.getQuantidade());
+						pedidoC.addPedido(produtos);
+
+					}
+
+				} else {
+
+					System.out.println("ID do produto Incorreto");
+
+				}
+
+			}
+
+		}
+
+	}
+
 }

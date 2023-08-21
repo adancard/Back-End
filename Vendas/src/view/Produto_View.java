@@ -12,7 +12,7 @@ public class Produto_View {
 		
 		for(Produto produtos: produto) {
 			
-			System.out.println("Produto id: "+produtos.getIdProduto()+" Nome do Produto: "+produtos.getNome()+ "Preco produto: "+produtos.getPreco());
+			System.out.println("Produto id: "+produtos.getIdProduto()+" Nome do Produto: "+produtos.getNome()+ " Preco produto: "+produtos.getPreco()+" Quantidade: "+produtos.getQuantidade());
 			
 		}
 		
