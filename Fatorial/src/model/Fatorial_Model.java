@@ -3,12 +3,11 @@ package model;
 public class Fatorial_Model {
 	
 	private int numero;
-	private int fat;
+	private int fat=1;
 	
-	public Fatorial_Model(int numero,int fat) {
+	public Fatorial_Model(int numero) {
 		
 		this.numero=numero;
-		this.fat=fat;
 		
 	}
 

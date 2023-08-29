@@ -12,7 +12,7 @@ public class Fatorial_View {
 		
 		for(Fatorial_Model fatorial : listaFatorial) {
 			
-			System.out.println("Fatorial: "+ fatorial.getFat());
+			System.out.println("Numero Fatorado: "+fatorial.getNumero()+" Fatorial: "+ fatorial.getFat());
 			
 		}
 
