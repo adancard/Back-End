@@ -1,44 +1,44 @@
 package controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import dao.Pais_Dao;
 import model.Paises;
 import view.Paises_view;
 
 public class Paises_controller {
 
-	private List<Paises> listadePaises;
-	private Paises_view paisview;
+	private Pais_Dao paisD;
+	private Paises_view paisV;
 
 	public Paises_controller() {
 
-		listadePaises = new ArrayList<>();
-		paisview = new Paises_view();
+		paisD = new Pais_Dao();
+		paisV = new Paises_view();
 
 	}
 
 	public void adicionar(String pais, String capital) {
 
-		Paises pais1 = new Paises(pais, capital);
-		listadePaises.add(pais1);
+		paisD.adicionar(pais, capital);
+
 	}
 
 	public void exibir() {
 
-		paisview.exibir(listadePaises);
-		
+		paisV.exibir(paisD.obtemLista());
+
 	}
 
 	public void limpar() {
 
-		listadePaises.clear();
+		paisD.limpar();
 
 	}
 
 	public void remover(int index) {
 
-		listadePaises.remove(index);
+		paisD.remover(index);
 
 	}
 
