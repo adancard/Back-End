@@ -18,7 +18,7 @@ public class Fatorial_Dao {
 	public void addNumero(int numero) {
 
 		Fatorial_Model fatorialModel = new Fatorial_Model(numero);
-		int fatorial;
+		double fatorial;
 
 		if (listaFatorial.size() == 5) {
 
