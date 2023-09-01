@@ -7,14 +7,22 @@ import model.Fatorial_Model;
 
 public class Fatorial_Dao {
 
+	// Declarando lista para so pegar informacoes do pacote fatorial model
 	private List<Fatorial_Model> listaFatorial;
 
+	// construtor do pacote
 	public Fatorial_Dao() {
 
 		listaFatorial = new ArrayList<>();
 
 	}
 
+	/*
+	 * 
+	 * Metodo para adicionar os fatorial se a lista atingir um tamanho igual a 5 ele
+	 * ira apaga o primerio resultado e ira adicionar a nova conta que foi feita
+	 * 
+	 */
 	public void addNumero(int numero) {
 
 		Fatorial_Model fatorialModel = new Fatorial_Model(numero);
@@ -50,6 +58,8 @@ public class Fatorial_Dao {
 
 	}
 
+	
+	//Metodo para retornar a lista
 	public List<Fatorial_Model> obtemLista() {
 
 		return listaFatorial;

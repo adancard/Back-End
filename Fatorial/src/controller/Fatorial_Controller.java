@@ -7,9 +7,11 @@ import view.Fatorial_View;
 
 public class Fatorial_Controller {
 
+	//Declarando as variaveis de nossos pacotes Fatorial dao e fatorial view
 	private Fatorial_Dao fatorialDao;
 	private Fatorial_View fatorialView;
 
+	//construtor desse pacote
 	public Fatorial_Controller() {
 
 		fatorialDao = new Fatorial_Dao();
@@ -17,18 +19,23 @@ public class Fatorial_Controller {
 
 	}
 
+	
+	//Metodo para adicionar o numero fatorado na lista Fatorial dao
 	public void adicionarFatorial(int numero) {
 
 		fatorialDao.addNumero(numero);
 
 	}
 
+	
+	//Metodo para Mostrar a lista para o usuario
 	public void mostrarLista() {
 
 		fatorialView.exibir(fatorialDao.obtemLista());
 
 	}
 
+	//Metodo para mostrar o menu de escolhar para o usuario
 	public void menu() {
 		Scanner entrada = new Scanner(System.in);
 		int opcao = -1, numero;
