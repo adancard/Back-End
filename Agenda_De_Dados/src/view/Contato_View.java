@@ -12,23 +12,25 @@ public class Contato_View {
 		
 		for(Contato_Model contato : contatoModel) {
 			
-			System.out.println("Id: "+contato.getId()+
-					" Nome: "+contato.getNome()+
-					" Email: "+contato.getEmail()+
-					" Telefone: "+contato.getTelefone());
+			System.out.println("Id: "+contato.getId()+"\n"+
+					"Nome: "+contato.getNome()+"\n"+
+					"Email: "+contato.getEmail()+"\n"+
+					"Telefone: "+contato.getTelefone());
+			
+			System.out.println("================================");
 		}
-		
-		System.out.println("================================");
 		
 	}
 	
 	public void exibirContato(Contato_Model contatoModel) {
 		
+		System.out.println("====== Contato ======");
+		System.out.println("Id:"+contatoModel.getId()+"\n"+
+				"Nome: "+contatoModel.getNome()+"\n"+
+				"Telefone: "+contatoModel.getTelefone()+"\n"+
+				"Email: "+contatoModel.getEmail());
 		
-		System.out.println("Id :"+contatoModel.getId()+
-				" Nome: "+contatoModel.getNome()+
-				" Telefone: "+contatoModel.getTelefone()+
-				" Email: "+contatoModel.getEmail());
+		System.out.println("======================");
 		
 	}
 	
