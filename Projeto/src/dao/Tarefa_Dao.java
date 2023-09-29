@@ -27,6 +27,14 @@ public class Tarefa_Dao {
 			preparedStatement.setString(2, tarefaModel.getTitulo());
 			preparedStatement.setString(3, tarefaModel.getDescricao());
 			preparedStatement.executeUpdate();
+			
+			
+			sql = "insert into log_tarefa (id_tarefa,operacao,mensagem,data_hora_log) values (?,'I',?,now())";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.setString(2, "Tarefa Adicionada com sucesso");
+			preparedStatement.executeUpdate();
+			
 
 		} catch (SQLException e) {
 
@@ -44,6 +52,13 @@ public class Tarefa_Dao {
 			preparedStatement.setString(1, tarefaModel.getStatus().name());
 			preparedStatement.setInt(2, tarefaModel.getId());
 			preparedStatement.executeUpdate();
+			
+			
+			sql = "insert into log_tarefa (id_tarefa,operacao,mensagem,data_hora_log) values (?,'U',?,now())";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.setString(2, "Tarefa Atualizada com sucesso");
+			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
 
@@ -60,6 +75,13 @@ public class Tarefa_Dao {
 			String sql = "update tarefa set status = 'C' where id_tarefa = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.executeUpdate();
+			
+			
+			sql = "insert into log_tarefa (id_tarefa,operacao,mensagem,data_hora_log) values (?,'U',?,now())";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.setString(2, "Tarefa Finalizada com sucesso");
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -91,6 +113,12 @@ public class Tarefa_Dao {
 				listaTarefa.add(tarefaModel);
 
 			}
+			
+			sql = "insert into log_tarefa (id_tarefa,operacao,mensagem,data_hora_log) values (0,'I',?,now())";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, "Banco de dados listado com sucesso");
+			preparedStatement.executeUpdate();
+			
 
 		} catch (SQLException e) {
 
@@ -110,6 +138,13 @@ public class Tarefa_Dao {
 
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.executeUpdate();
+			
+			
+			sql = "insert into log_tarefa (id_tarefa,operacao,mensagem,data_hora_log) values (?,'D',?,now())";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, tarefaModel.getId());
+			preparedStatement.setString(2, "Tarefa Removida com sucesso");
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
