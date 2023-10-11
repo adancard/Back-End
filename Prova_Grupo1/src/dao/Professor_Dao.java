@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,10 +14,8 @@ public class Professor_Dao {
 
 	private final String url = "jdbc:mysql://localhost:3306/senai_banco_academico";
 	private final String usuario = "root";
-	//private final String senha = "aluno";
-	private final String senha = "Adan7355608!";
-	private Connection connection;
-
+	private final String senha = "aluno";
+	
 	public void adicionarProfessor(Professor_Model professorModel) {
 
 		try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
@@ -140,7 +137,7 @@ public class Professor_Dao {
 		List<Professor_Model> listaProfs = new ArrayList<>();
 		try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
 
-			String sql = "select distinct * from professor where especialidade like'%Tecnologia da Informaï¿½ï¿½o%' ";
+			String sql = "select distinct * from professor where especialidade like'%Tecnologia da Informação%' ";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
 			ResultSet resultSet = preparedStatement.executeQuery();

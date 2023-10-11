@@ -7,19 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.ModelDisciplina;
-import model.Professor_Model;
+
 
 
 public class DaoDisciplina {
 
 	private final String url = "jdbc:mysql://localhost:3306/senai_banco_academico";
 	private final String usuario = "root";
-	//private final String senha = "aluno";
-	private final String senha = "Adan7355608!";
-	private Connection connection;
-	
+	private final String senha = "aluno";
+
 	public void adicionarDisciplina(ModelDisciplina diciplinaModel) {
 
 		try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {

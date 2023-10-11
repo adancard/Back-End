@@ -2,10 +2,8 @@ package controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import dao.DaoDisciplina;
 import model.ModelDisciplina;
-import model.Professor_Model;
 import view.ViewDisciplina;
 
 public class ControllerDisciplina {
@@ -34,16 +32,13 @@ public class ControllerDisciplina {
 
 	public void removerDisciplina(String sigla) {
 
-		for(ModelDisciplina disciplinaModel : daoDisciplina.exibirDisciplinas()) {
-			
-			if(disciplinaModel.getSiglaDisciplina().equalsIgnoreCase(sigla)) {
-				
-				daoDisciplina.removeDisciplinas(disciplinaModel);
-				
+		for (ModelDisciplina listaDisciplina : daoDisciplina.exibirDisciplinas()) {
+
+			if (listaDisciplina.getNome().equalsIgnoreCase(sigla)) {
+
+				daoDisciplina.removeDisciplinas(listaDisciplina);
 				break;
-				
 			}
-			
 		}
 	}
 
@@ -51,7 +46,7 @@ public class ControllerDisciplina {
 
 		ModelDisciplina disciplina = new ModelDisciplina(sigla, nome, ementa);
 
-		daoDisciplina.editarDiciplina(disciplina);;
+		daoDisciplina.editarDiciplina(disciplina);
 
 	}
 

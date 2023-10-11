@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Date;
-
 public class Professor_Model {
 
 	private String codigo;

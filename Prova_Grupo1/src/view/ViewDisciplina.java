@@ -1,9 +1,7 @@
 package view;
 
 import java.util.List;
-
 import model.ModelDisciplina;
-import model.Professor_Model;
 
 public class ViewDisciplina {
 
@@ -14,13 +12,19 @@ public class ViewDisciplina {
 		for(ModelDisciplina disciplina:disciplinas) {
 			
 			System.out.println("Sigla: "+disciplina.getSiglaDisciplina());
-			System.out.println("Nome: "+disciplina.getNome());
-			System.out.println("ementa: "+disciplina.getEmenta());
+			System.out.println("Nome:"+disciplina.getNome());
+			System.out.println("ementa"+disciplina.getEmenta());
 			System.out.println("------------------");
 		}
-		
+	}
 	
+	public void removerDisciplina(boolean disciplinaRemovida) {
 		
+		if(disciplinaRemovida) {
+			System.out.println("Disciplina removida com sucesso!\n");
+		}else {
+			System.out.println("Disciplina não encontrada.\n");
+		}
 	}
 	
 	public void exibirDisciplina(List<ModelDisciplina> lista) {
