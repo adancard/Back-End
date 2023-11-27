@@ -16,7 +16,7 @@ import com.java.revisao.repository.CadastroRepository;
 
 
 @RestController
-@RequestMapping("/pais")
+@RequestMapping("/cadastro")
 public class CadastroResource {
 
 	@Autowired
@@ -38,12 +38,12 @@ public class CadastroResource {
 	}
 	
 	@PostMapping
-	public Cadastro createPais(@RequestBody Cadastro cadastro) {
+	public Cadastro createCadastro(@RequestBody Cadastro cadastro) {
 		return CadastroRepository.save(cadastro);
 	}
 	
 	@PutMapping("/{codigo}")
-	public Cadastro updatePais(@PathVariable Long codigo, @RequestBody Cadastro cadastro) {
+	public Cadastro updateCadastro(@PathVariable Long codigo, @RequestBody Cadastro cadastro) {
 		cadastro.setCodigo(codigo);
 		return CadastroRepository.save(cadastro);
 	}

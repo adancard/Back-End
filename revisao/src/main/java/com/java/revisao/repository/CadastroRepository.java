@@ -14,6 +14,6 @@ import com.java.revisao.entity.Cadastro;
  */
 @Repository
 public interface CadastroRepository extends JpaRepository<Cadastro, Long> {
-	@Query("SELECT p FROM Pais p WHERE p.nome LIKE %:nome%")
+	@Query("SELECT p FROM Cadastro p WHERE p.nome LIKE %:nome%")
 	Iterable<Cadastro> findByNome(String nome);
 }

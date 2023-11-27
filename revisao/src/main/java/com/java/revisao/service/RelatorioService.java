@@ -66,7 +66,7 @@ public class RelatorioService {
 			headerCell.setHorizontalAlignment(PdfPCell.ALIGN_CENTER);
 			headerCell.setVerticalAlignment(PdfPCell.ALIGN_MIDDLE);
 
-			String[] headers = { "Código", "Nome", "Idade", "CEP" };
+			String[] headers = { "Código", "Nome", "Idade", "Cep" };
 			for (String header : headers) {
 				headerCell.setPhrase(new Paragraph(header, fontHeader));
 				tabela.addCell(headerCell);
@@ -76,11 +76,11 @@ public class RelatorioService {
 			Font fontData = FontFactory.getFont(FontFactory.HELVETICA);
 			fontData.setSize(10);
 
-			for (Cadastro cadastro1 : Cadastros) {
-                tabela.addCell(new Paragraph(String.valueOf(cadastro1.getCodigo()), fontData));
-                tabela.addCell(new Paragraph(cadastro1.getNome(), fontData));
-                tabela.addCell(new Paragraph(String.valueOf(cadastro1.getIdade()), fontData));
-                tabela.addCell(new Paragraph(cadastro1.getCep()));
+			for (Cadastro cadastroLista : Cadastros) {
+                tabela.addCell(new Paragraph(String.valueOf(cadastroLista.getCodigo()), fontData));
+                tabela.addCell(new Paragraph(cadastroLista.getNome(), fontData));
+                tabela.addCell(new Paragraph(String.valueOf(cadastroLista.getIdade()), fontData));
+                tabela.addCell(new Paragraph(cadastroLista.getCep()));
             }
 			document.add(tabela);
 			

@@ -105,7 +105,7 @@ public class UploadResource {
 			doc.getDocumentElement().normalize();
 
 			// Obtém uma lista de elementos "pais" do documento.
-			NodeList nodeList = doc.getElementsByTagName("pais");
+			NodeList nodeList = doc.getElementsByTagName("cadastro");
 
 			// Percorre a lista de elementos "pais" no documento XML.
 			for (int i = 0; i < nodeList.getLength(); i++) {
@@ -131,7 +131,7 @@ public class UploadResource {
 					cadastro.setCodigo(Long.parseLong(codigo));
 					cadastro.setNome(nome);
 					cadastro.setIdade(Integer.parseInt(idade));
-					cadastro.setCep(Integer.parseInt(cepResoursce.consultarLogradouro(null, cep)));
+					cadastro.setCep(cepResoursce.consultarLogradouro("Rua", cep));
 
 					// Salva no banco de dados
 					cadastroRepository.save(cadastro);

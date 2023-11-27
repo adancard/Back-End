@@ -24,6 +24,6 @@ public class Cadastro implements Serializable {
     private Long codigo;
     private String nome;
     private Integer idade;
-    private Integer cep;
+    private String cep;
 }
 

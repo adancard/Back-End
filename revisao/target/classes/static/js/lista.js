@@ -20,7 +20,7 @@ function gerarRelatorio() {
 }
 
 function buscaTodos() {
-	fetch('http://localhost:8080/pais')
+	fetch('http://localhost:8080/cadastro')
 		.then(response => {
 			if (!response.ok) {
 				throw new Error('Erro ao buscar países');
@@ -44,41 +44,41 @@ function buscaTodos() {
 			row.appendChild(cellNome);
 
 			const cellCapital = document.createElement('th');
-			cellCapital.textContent = "Nome do país";
+			cellCapital.textContent = "Nome";
 			row.appendChild(cellCapital);
 
 			const cellSigla2 = document.createElement('th');
-			cellSigla2.textContent = "Sigla (2)";
+			cellSigla2.textContent = "Idade";
 			row.appendChild(cellSigla2);
 
 			const cellSigla3 = document.createElement('th');
-			cellSigla3.textContent = "Sigla (3)";
+			cellSigla3.textContent = "Rua";
 			row.appendChild(cellSigla3);
 
 
 			tabelaElement.appendChild(row);
 
 			// Criar elementos de lista (li) para cada país
-			data.forEach(pais => {
+			data.forEach(cadastro => {
 				// Criar uma nova linha na tabela
 				const row = document.createElement('tr');
 
 				// Criar células na linha para cada propriedade do país
 				const cellCodigo = document.createElement('td');
-				cellCodigo.textContent = pais.codigo;
+				cellCodigo.textContent = cadastro.codigo;
 				row.appendChild(cellCodigo);
 
 				const cellNome = document.createElement('td');
-				cellNome.textContent = pais.nome;
+				cellNome.textContent = cadastro.nome;
 				row.appendChild(cellNome);
 
-				const cellSigla2 = document.createElement('td');
-				cellSigla2.textContent = pais.sigla2;
-				row.appendChild(cellSigla2);
+				const cellIdade = document.createElement('td');
+				cellIdade.textContent = cadastro.idade;
+				row.appendChild(cellIdade);
 
-				const cellSigla3 = document.createElement('td');
-				cellSigla3.textContent = pais.sigla3;
-				row.appendChild(cellSigla3);
+				const cellCep = document.createElement('td');
+				cellCep.textContent = cadastro.cep;
+				row.appendChild(cellCep);
 
 				// Adicionar a linha à tabela
 				tabelaElement.appendChild(row);
