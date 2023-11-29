@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alunos>
+   <Aluno>
+
+     <id_aluno>02</id_aluno>
+     <nome>Adolpho Agusto Cesar Coelho</nome>
+     <idade>17</idade>
+     <data_nascimento>02/05/2006</data_nascimento>
+     <rua>R. Antônio Garbeloto</rua>
+     <número>98</número>
+     <complemento> </complemento>
+     <bairro>Barcelona</bairro>
+     <cidade>São Caetano do Sul</cidade>
+     <estado>SP</estado>
+     <cep>09551-260</cep>
+   </Aluno>
+
+   <Aluno>
+      <id_aluno>04</id_aluno>
+     <nome>Marcos Leandro de Rosario</nome>
+     <idade>19</idade>
+     <data_nascimento>01/10/2004</data_nascimento>
+     <rua>R. Eng. Rebouças</rua>
+     <número>211</número>
+     <complemento> </complemento>
+     <bairro>Cerâmica</bairro>
+     <cidade>São Caetano do Sul</cidade>
+     <estado>SP</estado>
+     <cep>09540-000</cep>
+     </Aluno>
+
+     <Aluno>
+      <id_aluno>01</id_aluno>
+     <nome>Adelina Davis</nome>
+     <idade>18</idade>
+     <data_nascimento>20/12/2004</data_nascimento>
+     <rua>R. Paraíba</rua>
+     <número>463</número>
+     <complemento> </complemento>
+     <bairro>Centro</bairro>
+     <cidade>São Caetano do Sul</cidade>
+     <estado>SP</estado>
+     <cep>09521-070</cep>
+     </Aluno>
+
+
+<Aluno>
+      <id_aluno>05</id_aluno>
+     <nome>Manuela Gomez da Silva</nome>
+     <idade>21</idade>
+     <data_nascimento>20/12/2001</data_nascimento>
+     <rua>R. Jaguari</rua>
+     <número>113</número>
+     <complemento>até 469/470</complemento>
+     <bairro>Jardim</bairro>
+     <cidade>Santo André</cidade>
+     <estado>SP</estado>
+     <cep>09090-080</cep>
+     </Aluno>
+
+     <Aluno>
+      <id_aluno>03</id_aluno>
+     <nome>Maria Manuela Do Nacimento</nome>
+     <idade>23</idade>
+     <data_nascimento>02/04/2000</data_nascimento>
+     <rua>Rua Francisco Rebelo</rua>
+     <número>279</número>
+     <complemento></complemento>
+     <bairro>Vila California</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep>03212-000</cep>
+     </Aluno>
+
+
+       <Aluno>
+      <id_aluno>03</id_aluno>
+     <nome>Maria Manuela Do Nacimento</nome>
+     <idade>23</idade>
+     <data_nascimento>02/04/2000</data_nascimento>
+     <rua>Rua Francisco Rebelo</rua>
+     <número>279</número>
+     <complemento></complemento>
+     <bairro>Vila California</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep>03212-000</cep>
+     </Aluno>
+
+      <Aluno>
+      <id_aluno>06</id_aluno>
+     <nome>Maria Manuela Do Nacimento</nome>
+     <idade>23</idade>
+     <data_nascimento>01/03/2000</data_nascimento>
+     <rua>Rua Costa Aguiar</rua>
+     <número>2215</número>
+     <complemento>de 1601/1602 ao fim </complemento>
+     <bairro> Ipiranga</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep>04204-002</cep>
+     </Aluno>
+     
+     <Aluno>
+      <id_aluno>07</id_aluno>
+     <nome>Carlos Lorenzo Do Nacimento</nome>
+     <idade>20</idade>
+     <data_nascimento>01/06/2003</data_nascimento>
+     <rua>Rua Costa Aguiar</rua>
+     <número>2215</número>
+     <complemento>de 1601/1602 ao fim</complemento>
+     <bairro> Ipiranga</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep> 04204-002 </cep>
+     </Aluno>
+
+
+       <Aluno>
+      <id_aluno>08</id_aluno>
+     <nome>Xavier Gonçalves de Abreu</nome>
+     <idade>25</idade>
+     <data_nascimento>01/03/1997</data_nascimento>
+     <rua>R. Pres. José Linhares</rua>
+     <número>280</número>
+     <complemento></complemento>
+     <bairro> Parque Sao Vicente</bairro>
+     <cidade>Mauá</cidade>
+     <estado>SP</estado>
+     <cep> 09371-370 </cep>
+     </Aluno>
+
+
+     <Aluno>
+      <id_aluno>09</id_aluno>
+     <nome>Leandro Santana de Abreu</nome>
+     <idade>24</idade>
+     <data_nascimento>01/12/1998</data_nascimento>
+     <rua>R. Francisco dos Santos</rua>
+     <número>171</número>
+     <complemento></complemento>
+     <bairro> Vila Alpina</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep> 03207-020 </cep>
+     </Aluno>
+
+
+     <Aluno>
+      <id_aluno>10</id_aluno>
+     <nome>José Maria de Abreu</nome>
+     <idade>24</idade>
+     <data_nascimento>29/10/1998</data_nascimento>
+     <rua>R. Marquês Maricá</rua>
+     <número>1006</número>
+     <complemento></complemento>
+     <bairro> Sacomã</bairro>
+     <cidade>São Paulo</cidade>
+     <estado>SP</estado>
+     <cep> 04252-000 </cep>
+     </Aluno>
+     
+     
+     </Alunos>

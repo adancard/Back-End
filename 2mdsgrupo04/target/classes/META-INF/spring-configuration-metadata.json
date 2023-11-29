@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.senai.mdsgrupo04.config.ArquivoConfig",
+      "sourceType": "com.senai.mdsgrupo04.config.ArquivoConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.upload-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.senai.mdsgrupo04.config.ArquivoConfig"
+    }
+  ],
+  "hints": []
+}
