@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload de Arquivo</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				<a href="index.html">&larr; Voltar</a>
+			</div>
+			<div class="col-md-6 text-right">
+				<a href="javascript: gerarRelatorio();">Gerar Relatório</a>
+			</div>
+		</div>
+		<div class="tab-content mt-2">
+			<h4>Lista de Alunos</h4>
+
+			<table class="table table-bordered" id="tabela_lista"></table>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Inclua o SweetAlert2 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<script>
+		function gerarRelatorio() {
+			fetch('http://localhost:8080/api/relatorio')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Erro ao gerar relatório');
+					}
+					window.open('http://localhost:8080/api/relatorio');
+				})
+				.catch(error => {
+					console.error('Erro:', error);
+					Swal.fire({
+						icon: 'error',
+						title: 'Erro',
+						text: 'Erro ao gerar relatório',
+					});
+				});
+		}
+
+		function buscaTodos() {
+			fetch('http://localhost:8080/senai/api/consulta_todos')
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Erro ao buscar aluno');
+					}
+					return response.json();
+				})
+				.then(data => {
+					const tabelaElement = document.getElementById('tabela_lista');
+
+					while (tabelaElement.firstChild) {
+						tabelaElement.removeChild(tabelaElement.firstChild);
+					}
+
+					const row = document.createElement('tr');
+
+					const cellId = document.createElement('th');
+					cellId.textContent = "ID";
+					row.appendChild(cellId);
+
+					const cellNome = document.createElement('th');
+					cellNome.textContent = "Nome";
+					row.appendChild(cellNome);
+
+					const cellIdade = document.createElement('th');
+					cellIdade.textContent = "Idade";
+					row.appendChild(cellIdade);
+
+					const cellDataNascimento = document.createElement('th');
+					cellDataNascimento.textContent = "Data de Nascimento";
+					row.appendChild(cellDataNascimento);
+
+					const cellRua = document.createElement('th');
+					cellRua.textContent = "Numero";
+					row.appendChild(cellRua);
+
+					const cellNumero = document.createElement('th');
+					cellNumero.textContent = "Rua";
+					row.appendChild(cellNumero);
+
+					const cellComplemento = document.createElement('th');
+					cellComplemento.textContent = "Complemento";
+					row.appendChild(cellComplemento);
+
+					const cellBairro = document.createElement('th');
+					cellBairro.textContent = "Bairro";
+					row.appendChild(cellBairro);
+
+					const cellCidade = document.createElement('th');
+					cellCidade.textContent = "Cidade";
+					row.appendChild(cellCidade);
+
+					const cellEstado = document.createElement('th');
+					cellEstado.textContent = "Estado";
+					row.appendChild(cellEstado);
+
+					const cellCep = document.createElement('th');
+					cellCep.textContent = "Cep";
+					row.appendChild(cellCep);
+
+
+					tabelaElement.appendChild(row);
+
+
+					data.forEach(aluno => {
+
+						const row = document.createElement('tr');
+
+
+						const cellId = document.createElement('td');
+						cellId.textContent = aluno.id_Aluno;
+						row.appendChild(cellId);
+
+						const cellNome = document.createElement('td');
+						cellNome.textContent = aluno.nome;
+						row.appendChild(cellNome);
+
+						const cellIdade = document.createElement('td');
+						cellIdade.textContent = aluno.idade;
+						row.appendChild(cellIdade);
+
+						const cellDataNascimento = document.createElement('td');
+						cellDataNascimento.textContent = aluno.data_Nascimento;
+						row.appendChild(cellDataNascimento);
+
+						const cellNumero = document.createElement('td');
+						cellNumero.textContent = aluno.numero;
+						row.appendChild(cellNumero);
+
+						const cellRua = document.createElement('td');
+						cellRua.textContent = aluno.rua;
+						row.appendChild(cellRua);
+
+						const cellComplemento = document.createElement('td');
+						cellComplemento.textContent = aluno.complemento;
+						row.appendChild(cellComplemento);
+
+						const cellBairro = document.createElement('td');
+						cellBairro.textContent = aluno.bairro;
+						row.appendChild(cellBairro);
+
+						const cellCidade = document.createElement('td');
+						cellCidade.textContent = aluno.cidade;
+						row.appendChild(cellCidade);
+
+						const cellEstado = document.createElement('td');
+						cellEstado.textContent = aluno.estado;
+						row.appendChild(cellEstado);
+
+						const cellCep = document.createElement('td');
+						cellCep.textContent = aluno.cep;
+						row.appendChild(cellCep);
+
+						tabelaElement.appendChild(row);
+					});
+				})
+				.catch(error => {
+					console.error('Erro:', error);
+				});
+		}
+
+		window.onload = buscaTodos;
+	</script>
+
+
+
+</body>
+
+</html>
